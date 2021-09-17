@@ -1,9 +1,13 @@
 body{
     font-family: 'Ubuntu', sans-serif;
 }
+a{
+    color:gray;
+    font-size: 0.6rem;
+}
 .nav li{
     display: inline-block;
-    padding: 0 0.5rem;
+    margin: 0 0.5rem;
 }
 .user > h6{
     font-weight: 600;
@@ -23,12 +27,31 @@ body{
 .height{
     height: 100%;
 }
+.notify{
+    background-color: skyblue;
+}
+.notify h6{
+    font-size: 0.7rem;
+}
+.fa-bell-slash{
+    color: skyblue;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
 .left-part,
 .right-part{
     height: 100%;
 }
 .right-part{
     background-image: url(../img/mine.jpg);
+}
+.search-back{
+    background-color: rgb(218, 218, 218);
+}
+.f-c{
+    font-size: 0.7rem;
 }
 #app{
     height: 100vh;
