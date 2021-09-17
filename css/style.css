@@ -1,0 +1,18 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+#app{
+    height: 100vh;
+}
+#head{
+    background-color: rgb(51, 172, 152);
+    height: 20%;
+}
+#main{
+    background-color: rgb(172, 175, 179);
+    height: 80%;
+}
+#window{
+    background-color: lime;
+    height: 80%;
+}
