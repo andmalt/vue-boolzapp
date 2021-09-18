@@ -92,8 +92,53 @@ let app = new Vue({
                 ],
             },
         ],
+        avatarsImg: [
+            {
+                name:'_1',
+                img:'img/avatar_1.jpg',
+                alt: 'immagine avatar 1'
+            },
+            {
+                name:'_2',
+                img:'img/avatar_2.jpg',
+                alt: 'immagine avatar 2'
+            },
+            {
+                name:'_3',
+                img:'img/avatar_3.jpg',
+                alt: 'immagine avatar 3'
+            },
+            {
+                name:'_4',
+                img:'img/avatar_6.jpg',
+                alt: 'immagine avatar 6'
+            },
+            {
+                name:'_5',
+                img:'img/avatar_5.jpg',
+                alt: 'immagine avatar 5'
+            },
+            {
+                name:'_6',
+                img:'img/avatar_4.jpg',
+                alt: 'immagine avatar 4'
+            },
+            {
+                name:'_7',
+                img:'img/avatar_7.jpg',
+                alt: 'immagine avatar 7'
+            },
+            {
+                name:'_8',
+                img:'img/avatar_8.jpg',
+                alt: 'immagine avatar 8'
+            },
+        ],
+        contactIndex: 0 ,
     },
     methods:{
-        
+        selectContacts: function(index){
+            this.contactIndex = index;
+        }
     },
 });
