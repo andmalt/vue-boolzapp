@@ -72,8 +72,8 @@
                                     <!-- searchbar contacts -->
                                     <div class="col-12 search-back">
                                         <div class="input-group search-back">
-                                            <span class="input-group-text bg-white"><i class="fas fa-search"></i></span>
-                                            <input type="text" class="form-control f-c" placeholder="cerca o inizia una nuova chat">
+                                            <span class="input-group-text bg-white my-1"><i class="fas fa-search"></i></span>
+                                            <input type="text" class="form-control f-c my-1" placeholder="cerca o inizia una nuova chat">
                                         </div>
                                     </div>
 
@@ -93,12 +93,34 @@
                             </div>
                             <!-- right part of the window -->
                             <div class="right-part col-12 col-md-8">
-                                <div class="row">
-                                    <div class="col-12 current-contact">
-                                        <div class=" img-users d-inline-block p-2">
-                                            <img :src="avatarsImg[contactIndex].img" :alt="avatarsImg[contactIndex].alt">
+                                <div class="row flex-column justify-content-between right-row">
+                                    <!-- current contact bar -->
+                                    <div class="col-12 d-flex justify-content-between current-contact">
+                                        <div class="">
+                                            <div class=" img-users d-inline-block p-2">
+                                                <img :src="avatarsImg[contactIndex].img" :alt="avatarsImg[contactIndex].alt">
+                                            </div>
+                                            <h6 class="d-inline-block">{{ contacts[contactIndex].name }}</h6>
                                         </div>
-                                        <h6 class="d-inline-block">{{ contacts[contactIndex].name }}</h6>
+                                        <div class="list-fas d-flex justify-content-center align-items-center">
+                                            <ul class="list-unstyled m-0">
+                                                <li><i class="fas fa-search"></i></li>
+                                                <li><i class="fas fa-paperclip"></i></li>
+                                                <li><i class="fas fa-ellipsis-v"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- contact messages -->
+                                    <div class="col-12 messages-box">
+
+                                    </div>
+                                    <!-- input where messages are written -->
+                                    <div class="col-12 input-messages">
+                                        <div class="input-group input-messages d-flex justify-content-around align-items-center">
+                                            <span class=" input-messages border-0"><i class="far fa-smile"></i></span>
+                                            <input class=" my-2 border-0 input-messages-i ps-1 p-1 text-input" type="text" placeholder="Scrivi un messaggio">
+                                            <span class=" input-messages border-0"><i class="fas fa-microphone"></i></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
