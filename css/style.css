@@ -86,12 +86,17 @@ ul li{
     background-color: lightgray;
 }
 .sent-messages{
-    background-color: rgb(134, 206, 0);
+    background-color: rgb(195, 230, 130);
     border-radius: 5px;
 }
 .received-messages{
     background-color: white;
     border-radius: 5px;
+}
+.date{
+    font-size: 0.5rem;
+    color: rgb(136, 136, 136);
+    text-align: end;
 }
 #app{
     height: 100vh;

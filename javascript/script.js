@@ -135,10 +135,19 @@ let app = new Vue({
             },
         ],
         contactIndex: 0 ,
+        messagesUser:[],
+        inputUser:'',
     },
     methods:{
         selectContacts: function(index){
             this.contactIndex = index;
+        },
+        addMessages:function(){
+            if(this.inputUser.trim().length > 0){
+                this.messagesUser.push(this.inputUser.trim());
+                this.inputUser = '';
+                console.log(this.messagesUser);
+            }
         }, 
     },
 });

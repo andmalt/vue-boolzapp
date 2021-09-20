@@ -81,10 +81,19 @@
                                     <div class="contacts-box col-12">
                                         <div class="row">
                                             <div v-for="(contact , index) in contacts" @click="selectContacts(index)" class="col-12 users-box">
-                                                <div class=" img-users d-inline-block p-2">
-                                                    <img :src="avatarsImg[index].img" :alt="avatarsImg[index].alt">
-                                                </div>
-                                                <h6 class="d-inline-block name-contacts">{{ contacts[index].name }}</h6>
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                        <div class=" img-users d-inline-block p-2">
+                                                            <img :src="avatarsImg[index].img" :alt="avatarsImg[index].alt">
+                                                        </div>
+                                                        <h6 class="d-inline-block name-contacts">{{ contacts[index].name }}</h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div v-for="(element , index ) in contacts[index].messages"class="date">
+                                                            <p> {{  }} </p>
+                                                        </div>
+                                                    </div>
+                                                </div>                                               
                                             </div>                                            
                                         </div>
                                     </div>
@@ -122,9 +131,10 @@
                                                             <div class="col-12 col-md-4">
                                                                 <div class="sent-messages p-2">
                                                                     <p class="m-0 ps-2"> {{ element.text }}</p>
+                                                                    <div class="date">{{ element.date }}</div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div>                                                        
                                                     </div>
                                                     <!-- column received -->
                                                     <div v-else-if="element.status == 'received'" class="col-12 mb-2  ps-5">
@@ -132,6 +142,17 @@
                                                             <div class="col-12 col-md-4 ">
                                                                 <div class="received-messages p-2">
                                                                     <p class="m-0 ps-2">{{ element.text }}</p>
+                                                                    <div class="date">{{ element.date }}</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- user sent -->
+                                                    <div v-for="(element, index) in messagesUser" class="col-12 mb-2  ps-5">
+                                                        <div class="row justify-content-end">
+                                                            <div  class="col-12 col-md-4">
+                                                                <div class="sent-messages p-2">
+                                                                    <p class="m-0 ps-2"> {{ element }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -146,7 +167,7 @@
                                     <div class="col-12 input-messages">
                                         <div class="input-group input-messages d-flex justify-content-around align-items-center">
                                             <span class=" input-messages border-0"><i class="far fa-smile"></i></span>
-                                            <input class=" my-2 border-0 input-messages-i ps-1 p-1 text-input" type="text" placeholder="Scrivi un messaggio">
+                                            <input @keyup.enter="addMessages" v-model="inputUser" class=" my-2 border-0 input-messages-i ps-1 p-1 text-input" type="text" placeholder="Scrivi un messaggio">
                                             <span class=" input-messages border-0"><i class="fas fa-microphone"></i></span>
                                         </div>
                                     </div>
