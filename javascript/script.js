@@ -139,6 +139,6 @@ let app = new Vue({
     methods:{
         selectContacts: function(index){
             this.contactIndex = index;
-        }
+        }, 
     },
 });

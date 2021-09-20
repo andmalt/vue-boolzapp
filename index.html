@@ -117,21 +117,21 @@
                                             <div class="col-12 messages-box">
                                                 <div class="row">
                                                     <!-- column sent -->
-                                                    <div v-for="(element , index ) in contacts" class="col-12 mb-2 sent pe-5">
+                                                    <div v-for="(element , index ) in contacts[contactIndex].messages" v-if="element.status == 'sent'"  class="col-12 mb-2 pe-5">
                                                         <div class="row justify-content-end">
                                                             <div class="col-12 col-md-4">
                                                                 <div class="sent-messages p-2">
-                                                                    <p class="m-0 ps-2">{{ contacts[contactIndex].messages[index] }}</p>
+                                                                    <p class="m-0 ps-2"> {{ element.text }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!-- column received -->
-                                                    <div class="col-12 mb-2 received ps-5">
+                                                    <div v-else-if="element.status == 'received'" class="col-12 mb-2  ps-5">
                                                         <div class="row">
-                                                            <div class="col-12 col-md-4">
-                                                                <div class="received-messages p-2 ">
-                                                                    <p class="m-0 ps-2">ricevuti</p>
+                                                            <div class="col-12 col-md-4 ">
+                                                                <div class="received-messages p-2">
+                                                                    <p class="m-0 ps-2">{{ element.text }}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
