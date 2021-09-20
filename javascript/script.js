@@ -146,7 +146,6 @@ let app = new Vue({
             if(this.inputUser.trim().length > 0){
                 this.messagesUser.push(this.inputUser.trim());
                 this.inputUser = '';
-                console.log(this.messagesUser);
             }
         }, 
     },
