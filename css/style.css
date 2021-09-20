@@ -85,6 +85,14 @@ ul li{
 .users-box:hover{
     background-color: lightgray;
 }
+.sent-messages{
+    background-color: rgb(134, 206, 0);
+    border-radius: 5px;
+}
+.received-messages{
+    background-color: white;
+    border-radius: 5px;
+}
 #app{
     height: 100vh;
 }

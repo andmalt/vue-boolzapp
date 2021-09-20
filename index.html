@@ -94,26 +94,54 @@
                             <!-- right part of the window -->
                             <div class="right-part col-12 col-md-8">
                                 <div class="row flex-column justify-content-between right-row">
-                                    <!-- current contact bar -->
-                                    <div class="col-12 d-flex justify-content-between current-contact">
-                                        <div class="">
-                                            <div class=" img-users d-inline-block p-2">
-                                                <img :src="avatarsImg[contactIndex].img" :alt="avatarsImg[contactIndex].alt">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <!-- current contact bar -->
+                                            <div class="col-12 d-flex justify-content-between current-contact mb-2">
+                                                <div class="">
+                                                    <div class=" img-users d-inline-block p-2">
+                                                        <img :src="avatarsImg[contactIndex].img" :alt="avatarsImg[contactIndex].alt">
+                                                    </div>
+                                                    <h6 class="d-inline-block">{{ contacts[contactIndex].name }}</h6>
+                                                </div>
+                                                <div class="list-fas d-flex justify-content-center align-items-center">
+                                                    <ul class="list-unstyled m-0">
+                                                        <li><i class="fas fa-search"></i></li>
+                                                        <li><i class="fas fa-paperclip"></i></li>
+                                                        <li><i class="fas fa-ellipsis-v"></i></li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <h6 class="d-inline-block">{{ contacts[contactIndex].name }}</h6>
-                                        </div>
-                                        <div class="list-fas d-flex justify-content-center align-items-center">
-                                            <ul class="list-unstyled m-0">
-                                                <li><i class="fas fa-search"></i></li>
-                                                <li><i class="fas fa-paperclip"></i></li>
-                                                <li><i class="fas fa-ellipsis-v"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- contact messages -->
-                                    <div class="col-12 messages-box">
 
+                                            <!-- contact messages -->
+                                            <div class="col-12 messages-box">
+                                                <div class="row">
+                                                    <!-- column sent -->
+                                                    <div v-for="(element , index ) in contacts" class="col-12 mb-2 sent pe-5">
+                                                        <div class="row justify-content-end">
+                                                            <div class="col-12 col-md-4">
+                                                                <div class="sent-messages p-2">
+                                                                    <p class="m-0 ps-2">{{ contacts[contactIndex].messages[index] }}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- column received -->
+                                                    <div class="col-12 mb-2 received ps-5">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-4">
+                                                                <div class="received-messages p-2 ">
+                                                                    <p class="m-0 ps-2">ricevuti</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
                                     </div>
+                                    
+                                    
                                     <!-- input where messages are written -->
                                     <div class="col-12 input-messages">
                                         <div class="input-group input-messages d-flex justify-content-around align-items-center">
