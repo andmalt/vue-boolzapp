@@ -136,6 +136,7 @@ let app = new Vue({
         ],
         contactIndex: 0 ,
         inputUser:'',
+        searchUser:'',
 
         messageInput:{
             date:'28/03/2020 16:45:22',
@@ -161,6 +162,14 @@ let app = new Vue({
                 this.messageOutput.text = 'ok';
                 setTimeout(() => this.contacts[this.contactIndex].messages.push(this.messageOutput), 1000);
             }
+        },
+        search:function myFunction() {
+            if(this.searchUser.length > 0){
+                console.log(this.searchUser);
+                // for (i = 0; i < this.searchUser.length; i++) {
+
+                // }
+            }           
         },
     },
 });

@@ -73,7 +73,7 @@
                                     <div class="col-12 search-back">
                                         <div class="input-group search-back">
                                             <span class="input-group-text bg-white my-1"><i class="fas fa-search"></i></span>
-                                            <input type="text" class="form-control f-c my-1" placeholder="cerca o inizia una nuova chat">
+                                            <input type="text" v-model="searchUser" @keyup="search" class="form-control f-c my-1" placeholder="cerca o inizia una nuova chat">
                                         </div>
                                     </div>
 
