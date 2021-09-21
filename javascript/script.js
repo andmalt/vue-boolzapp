@@ -158,7 +158,8 @@ let app = new Vue({
                 this.messageInput.text = this.inputUser.trim();
                 this.inputUser = '';
                 this.contacts[this.contactIndex].messages.push(this.messageInput);
-                
+                this.messageOutput.text = 'ok';
+                setTimeout(() => this.contacts[this.contactIndex].messages.push(this.messageOutput), 1000);
             }
         },
     },
