@@ -120,27 +120,16 @@
                                             <!-- contact messages -->
                                             <div class="col-12 messages-box">
                                                 <div class="row">
-                                                    <!-- column sent -->
-                                                    <div v-for="(element , index ) in contacts[contactIndex].messages" v-if="element.status == 'sent'"  class="col-12 mb-2 pe-5">
-                                                        <div class="row justify-content-end">
+                                                    <!-- column -->
+                                                    <div v-for="(element , index ) in contacts[contactIndex].messages" class="col-12 mb-2" :class="{ 'pe-5': element.status == 'sent','ps-5': element.status == 'received' }">
+                                                        <div class="row" :class="{ 'sent-position': element.status == 'sent' }">
                                                             <div class="col-12 col-md-4">
-                                                                <div class="sent-messages p-2">
+                                                                <div class="p-2" :class="{ 'sent-messages': element.status == 'sent','received-messages': element.status == 'received' }">
                                                                     <p class="m-0 ps-2"> {{ element.text }}</p>
                                                                     <div class="date">{{ element.date }}</div>
                                                                 </div>
                                                             </div>
                                                         </div>                                                        
-                                                    </div>
-                                                    <!-- column received -->
-                                                    <div v-else-if="element.status == 'received'" class="col-12 mb-2  ps-5">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-4 ">
-                                                                <div class="received-messages p-2">
-                                                                    <p class="m-0 ps-2">{{ element.text }}</p>
-                                                                    <div class="date">{{ element.date }}</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

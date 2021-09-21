@@ -85,6 +85,10 @@ ul li{
 .users-box:hover{
     background-color: lightgray;
 }
+.sent-position{
+    display: flex;
+    justify-content: end;
+}
 .sent-messages{
     background-color: rgb(195, 230, 130);
     border-radius: 5px;

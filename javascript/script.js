@@ -165,10 +165,8 @@ let app = new Vue({
         },
         search:function myFunction() {
             if(this.searchUser.length > 0){
+                /* in working */
                 console.log(this.searchUser);
-                // for (i = 0; i < this.searchUser.length; i++) {
-
-                // }
             }           
         },
     },
