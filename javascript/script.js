@@ -135,8 +135,19 @@ let app = new Vue({
             },
         ],
         contactIndex: 0 ,
-        messagesUser:[],
         inputUser:'',
+
+        messageInput:{
+            date:'28/03/2020 16:45:22',
+            text:'',
+            status: 'sent',
+        },
+        messageOutput:{
+            date:'28/03/2020 16:45:23',
+            text:'',
+            status: 'received',
+        },
+
     },
     methods:{
         selectContacts: function(index){
@@ -144,9 +155,11 @@ let app = new Vue({
         },
         addMessages:function(){
             if(this.inputUser.trim().length > 0){
-                this.messagesUser.push(this.inputUser.trim());
+                this.messageInput.text = this.inputUser.trim();
                 this.inputUser = '';
+                this.contacts[this.contactIndex].messages.push(this.messageInput);
+                
             }
-        }, 
+        },
     },
 });
