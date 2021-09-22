@@ -185,10 +185,16 @@ let app = new Vue({
             this.addMessages();       
             setTimeout(() => this.replyMessagge() , 1000);
         },
-        // search contacts on search bar
+        // search contacts on search bar        ---- at working ----
         search:function myFunction() {
             if(this.searchUser.length > 0){
-                /* under construction */
+                this.contacts.filter((element, index)=> {
+                    element.visible = false;
+                    if(element.name.toLowerCase().includes(this.searchUser.toLowerCase(), this.searchUser.length)){
+                      return element.visible = true;
+                    }
+                    return element.visible = false;
+                });
                 console.log(this.searchUser);
             }           
         },

@@ -80,7 +80,7 @@
                                     <!-- contacts -->
                                     <div class="contacts-box col-12">
                                         <div class="row">
-                                            <div v-for="(contact , index) in contacts" @click="selectContacts(index)" class="col-12 users-box">
+                                            <div v-for="(contact , index) in contacts" @click="selectContacts(index)" :class="{ 'd-none':(contact.visible == false)}" class="col-12 users-box">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class=" img-users d-inline-block p-2">
