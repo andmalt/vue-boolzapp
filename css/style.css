@@ -67,7 +67,9 @@ ul li{
     background-color: white;
     overflow: auto;
 }
-.messages-box{
+    
+.contact_messages{
+    height: calc(100% - 49px);
     overflow: auto;
 }
 .search-back{

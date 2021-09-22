@@ -98,8 +98,8 @@
                             <!-- right part of the window -->
                             <div class="right-part col-12 col-md-8">
                                 <div class="row flex-column justify-content-between right-part">
-                                    <div class="col-12 ">
-                                        <div class="row ">
+                                    <div class="col-12 contact_messages">
+                                        <div class="row">
                                             <!-- current contact bar -->
                                             <div class="col-12 d-flex justify-content-between current-contact mb-2">
                                                 <div class="">
@@ -118,7 +118,7 @@
                                             </div>
 
                                             <!-- contact messages -->
-                                            <div class="col-12 messages-box">
+                                            <div class="col-12">
                                                 <div class="row ">
                                                     <!-- column -->
                                                     <div v-for="(element , index ) in contacts[contactIndex].messages" class="col-12 mb-2" :class="{ 'pe-5': element.status == 'sent','ps-5': element.status == 'received' }">
