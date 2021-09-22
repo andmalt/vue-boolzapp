@@ -138,11 +138,7 @@ let app = new Vue({
         inputUser:'',
         searchUser:'',
 
-        messageInput:{
-            date:'28/03/2020 16:45:22',
-            text:'',
-            status: 'sent',
-        },
+        
         messageOutput:{
             date:'28/03/2020 16:45:23',
             text:'',
@@ -156,12 +152,20 @@ let app = new Vue({
         },
         addMessages:function(){
             if(this.inputUser.trim().length > 0){
-                this.messageInput.text = this.inputUser.trim();
+                let messageInput = {
+                    date:'28/03/2020 16:45:22',
+                    text:'',
+                    status: 'sent',
+                };
+                messageInput.text = this.inputUser.trim();
                 this.inputUser = '';
-                this.contacts[this.contactIndex].messages.push(this.messageInput);
+                this.contacts[this.contactIndex].messages.push(messageInput);
                 this.messageOutput.text = 'ok';
-                setTimeout(() => this.contacts[this.contactIndex].messages.push(this.messageOutput), 1000);
             }
+        },
+        addKeyUp:function(){
+            this.addMessages();         
+            setTimeout(() => this.contacts[this.contactIndex].messages.push(this.messageOutput), 1000);
         },
         search:function myFunction() {
             if(this.searchUser.length > 0){

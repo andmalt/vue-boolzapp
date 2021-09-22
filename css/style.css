@@ -67,9 +67,6 @@ ul li{
     background-color: white;
     overflow: auto;
 }
-.right-row{
-   height: 100%;  
-}
 .messages-box{
     overflow: auto;
 }
