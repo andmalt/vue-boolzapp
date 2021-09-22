@@ -189,14 +189,20 @@ let app = new Vue({
         search:function myFunction() {
             if(this.searchUser.length > 0){
                 this.contacts.filter((element, index)=> {
-                    element.visible = false;
-                    if(element.name.toLowerCase().includes(this.searchUser.toLowerCase(), this.searchUser.length)){
+                    if(element.name.trim().toLowerCase().includes(this.searchUser.trim().toLowerCase(), this.searchUser.length)){
+                        console.log(element.name);
                       return element.visible = true;
                     }
                     return element.visible = false;
                 });
                 console.log(this.searchUser);
-            }           
+                
+            } else if(this.searchUser.length = 0){
+                this.contacts.filter((element, index)=> {                    
+                    return element.visible = true;
+                });
+                console.log(this.searchUser);
+            }          
         },
     },
 });
