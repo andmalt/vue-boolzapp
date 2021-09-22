@@ -188,13 +188,11 @@ let app = new Vue({
         // search contacts on search bar
         search:function myFunction() {
             this.contacts.filter((element, index)=> {
-                if(element.name.trim().toLowerCase().includes(this.searchUser.trim().toLowerCase())){
-                    console.log(element.name);
+                if(element.name.trim().toLowerCase().slice(0,this.searchUser.length).includes(this.searchUser.trim().toLowerCase())){
                     return element.visible = true;
                 }
                 return element.visible = false;
             });
-            console.log(this.searchUser);
         },
     },
 });
