@@ -124,7 +124,7 @@
                                                     <div v-for="(element , index ) in contacts[contactIndex].messages" class="col-12 mb-2" :class="{ 'pe-5': element.status == 'sent','ps-5': element.status == 'received' }">
                                                         <div class="row" :class="{ 'sent-position': element.status == 'sent' }">
                                                             <div class="col-12 col-md-4">
-                                                                <div class="p-2" :class="{ 'sent-messages': element.status == 'sent','received-messages': element.status == 'received' }">
+                                                                <div class="p-2 message">
                                                                     <p class="m-0 ps-2"> {{ element.text }}</p>
                                                                     <div class="date">{{ element.date }}</div>
                                                                 </div>
