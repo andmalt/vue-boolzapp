@@ -92,6 +92,7 @@ let app = new Vue({
                 ],
             },
         ],
+        // images contacts
         avatarsImg: [
             {
                 name:'_1',
@@ -138,38 +139,56 @@ let app = new Vue({
         inputUser:'',
         searchUser:'',
 
-        
-        messageOutput:{
-            date:'28/03/2020 16:45:23',
-            text:'',
-            status: 'received',
-        },
-
     },
     methods:{
+        // insert the current index of the contact
         selectContacts: function(index){
             this.contactIndex = index;
         },
+        // message write from the user
         addMessages:function(){
+            // if variable has a content
             if(this.inputUser.trim().length > 0){
+
+                // create an object to populate
                 let messageInput = {
                     date:'28/03/2020 16:45:22',
                     text:'',
                     status: 'sent',
                 };
+
+                // insert variable content in the object 
                 messageInput.text = this.inputUser.trim();
+                // delete content of the variable
                 this.inputUser = '';
+                // then send message
                 this.contacts[this.contactIndex].messages.push(messageInput);
-                this.messageOutput.text = 'ok';
-            }
+            };
         },
+        // reply message from the pc
+        replyMessagge:function(){
+
+            // create an object to populate
+            let  messageOutput={
+                date:'28/03/2020 16:45:23',
+                text:'',
+                status: 'received',
+            };
+
+            // insert value content in the object
+            messageOutput.text = 'ok';
+            // then send message
+            this.contacts[this.contactIndex].messages.push(messageOutput)
+        },
+        // sending message and reply from the pc after one second
         addKeyUp:function(){
-            this.addMessages();         
-            setTimeout(() => this.contacts[this.contactIndex].messages.push(this.messageOutput), 1000);
+            this.addMessages();       
+            setTimeout(() => this.replyMessagge() , 1000);
         },
+        // search contacts on search bar
         search:function myFunction() {
             if(this.searchUser.length > 0){
-                /* in working */
+                /* under construction */
                 console.log(this.searchUser);
             }           
         },
