@@ -25,18 +25,13 @@ ul li{
 .input-messages{
     background-color: rgb(218, 218, 218);
 }
-.input-messages-i{
-    width: 75%;
-}
 .text-input{
     font-size: 0.8rem;
-}
-.img-users{
-    width: 3.4rem;
+    width: 75%;
 }
 .img-users img{
     width: 100%;
-    height: 1.8rem;
+    height: 2.1rem;
     border-radius: 50%;
 }
 .height{
@@ -96,6 +91,9 @@ ul li{
     background-color: white;
     border-radius: 5px;
 }
+.message p{
+    font-size: 0.9rem;
+}
 .date{
     font-size: 0.5rem;
     color: rgb(136, 136, 136);
@@ -115,5 +113,5 @@ ul li{
 #window{
     background-color: white;
     height: 600px;
-    transform: scale(1, 1.3);
+    transform: scale(1.1);
 }
